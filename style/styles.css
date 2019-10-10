@@ -1,3 +1,15 @@
+html,
+body,
+#__next,
+#__next > div {
+  height: 100%;
+  background-color: #e9ecef;
+}
+
+body {
+  position: relative;
+}
+
 #search-submit {
   border: 1px solid #ced4da;
   margin-top: 8px;
@@ -14,13 +26,7 @@ a:hover {
   text-decoration: none;
 }
 
-.jumbotron {
-  width: 50%;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.navbar button {
+#search-submit {
   background-color: white;
 }
 
@@ -35,21 +41,49 @@ a:hover {
 }
 
 #footer {
-  height: 100px;
+  height: 150px;
+}
+
+.btn-top {
+  width: 50px;
+  height: 60px;
+  position: fixed;
+  bottom: 15vh;
+  right: 5vh;
+  border: none;
+  font-size: 30px;
+  visibility: hidden;
+  background: rgb(255, 254, 254, 0);
+  transition: visibility 0.5s;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.turn-on {
+  visibility: visible;
 }
 @media (max-width: 768px) {
+  .no-books {
+    margin-top: auto;
+    font-size: 20px;
+    margin-bottom: auto;
+  }
+
+  .main-books {
+    max-width: 100%;
+    min-height: 100%;
+  }
+
   .navbar {
     height: 70px;
     background: url(/books.jpg);
     background-size: cover;
     width: 100%;
-
+    transition: all 0.5s;
     position: relative;
   }
 
-  .main-books {
-    max-width: 100%;
-  }
   .card-main {
     width: 60%;
     margin-left: auto;
@@ -58,10 +92,6 @@ a:hover {
 }
 
 @media (min-width: 768px) {
-  .main-books {
-    max-width: 100%;
-  }
-
   .navbar {
     height: 100px;
     background: url(/books.jpg);
@@ -72,7 +102,7 @@ a:hover {
 
   .shrink {
     height: 100px;
-    transition: 1s;
+    transition: all 1.5s;
   }
 
   .shrink {
@@ -80,6 +110,13 @@ a:hover {
   }
   .main-books {
     margin-top: 100px;
+    min-height: 100%;
+  }
+
+  .no-books {
+    margin-top: auto;
+    font-size: 20px;
+    margin-bottom: auto;
   }
 }
 @media (min-width: 992px) {
@@ -87,14 +124,14 @@ a:hover {
     max-width: 80%;
   }
   .navbar {
-    height: 250px;
+    height: 200px;
   }
 
   .shrink {
     height: 100px;
   }
   .main-books {
-    margin-top: 250px;
+    margin-top: 200px;
   }
 }
 @media (min-width: 1200px) {

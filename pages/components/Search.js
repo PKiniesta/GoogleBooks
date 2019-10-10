@@ -11,6 +11,11 @@ const Search = ({ search, onSearch }) => {
     return 'navbar fixed-top';
   };
 
+  const handleBtnFade = scrollY => {
+    if (scrollY > 200) return 'btn-top turn-on';
+    return 'btn-top';
+  };
+
   useEffect(() => {
     const scroll = () => {
       window.addEventListener('scroll', handleScroll);
@@ -39,6 +44,14 @@ const Search = ({ search, onSearch }) => {
           </div>
         </div>
       </form>
+      <button
+        onClick={() => {
+          document.documentElement.scrollTop = 0;
+        }}
+        className={handleBtnFade(scrollY)}
+      >
+        <FontAwesomeIcon icon="arrow-up" id="icon-btn-top" />
+      </button>
     </nav>
   );
 };

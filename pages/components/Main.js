@@ -10,6 +10,15 @@ const Main = ({ books, noBooks }) => {
       return '/noimg.png';
     }
   };
+  const handleTitle = book => {
+    try {
+      return book.volumeInfo.title.length > 25
+        ? titleText(book.volumeInfo.title)
+        : book.volumeInfo.title;
+    } catch (e) {
+      return 'BAD FETCH';
+    }
+  };
 
   const titleText = title => {
     const short = title.substring(0, 25) + '..';
@@ -19,12 +28,12 @@ const Main = ({ books, noBooks }) => {
     <>
       <div className="row main-books mx-auto">
         {!noBooks ? (
-          <div className="jumbotron text-center">
+          <div className="d-flex  no-books text-center mx-auto">
             <FontAwesomeIcon
               icon="search"
               id="main-noBooks"
               fixedWidth
-              size="5x"
+              size="10x"
             />
           </div>
         ) : (
@@ -41,11 +50,7 @@ const Main = ({ books, noBooks }) => {
                   alt={book.volumeInfo.title}
                 />
                 <div className="card-body">
-                  <p className="card-title">
-                    {book.volumeInfo.title.length > 25
-                      ? titleText(book.volumeInfo.title)
-                      : book.volumeInfo.title}
-                  </p>
+                  <p className="card-title">{handleTitle(book)}</p>
                 </div>
                 <p className="card-rating">
                   {book.volumeInfo.averageRating ? 1 : 0}
