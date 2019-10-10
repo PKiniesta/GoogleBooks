@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
+import StarRatings from '../../node_modules/react-star-ratings';
 import '../../style/styles.css';
 
 const Main = ({ books, noBooks }) => {
@@ -52,9 +53,25 @@ const Main = ({ books, noBooks }) => {
                 <div className="card-body">
                   <p className="card-title">{handleTitle(book)}</p>
                 </div>
-                <p className="card-rating">
-                  {book.volumeInfo.averageRating ? 1 : 0}
-                </p>
+                <div className="card-rating">
+                  <StarRatings
+                    rating={
+                      book.volumeInfo.averageRating
+                        ? book.volumeInfo.averageRating
+                        : 0
+                    }
+                    starRatedColor="gold"
+                    numberOfStars={5}
+                    name="rating"
+                    starDimension={'20px'}
+                    starSpacing={'0px'}
+                  />
+                  <span id="rating-count">
+                    {book.volumeInfo.ratingsCount
+                      ? book.volumeInfo.ratingsCount
+                      : 0}
+                  </span>
+                </div>
                 <a href={book.volumeInfo.infoLink}>
                   <button className="btn btn-secondary">SHOW</button>
                 </a>

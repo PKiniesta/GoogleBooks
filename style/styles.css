@@ -38,10 +38,15 @@ a:hover {
 
 .card-rating {
   margin-top: -20px !important;
+  margin-bottom: 10px;
 }
 
 #footer {
   height: 150px;
+}
+
+.star-container {
+  padding-bottom: 8px;
 }
 
 .btn-top {
