@@ -68,7 +68,7 @@ const Main = ({ books, noBooks }) => {
                   />
                   <span id="rating-count">
                     {book.volumeInfo.ratingsCount
-                      ? book.volumeInfo.ratingsCount
+                      ? `(${book.volumeInfo.ratingsCount})`
                       : 0}
                   </span>
                 </div>
