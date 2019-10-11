@@ -5,7 +5,8 @@ import {
   faCoffee,
   faSearch,
   faBookDead,
-  faArrowUp
+  faArrowUp,
+  faCircleNotch
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab, faCheckSquare, faCoffee, faSearch, faBookDead, faArrowUp);
+library.add(fab, faCheckSquare, faCoffee, faSearch, faBookDead, faArrowUp, faCircleNotch);

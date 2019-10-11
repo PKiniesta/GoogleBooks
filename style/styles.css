@@ -10,6 +10,12 @@ body {
   position: relative;
 }
 
+.id-book-img {
+  display: none;
+}
+.book-spinner {
+  display: none;
+}
 #search-submit {
   border: 1px solid #ced4da;
   margin-top: 8px;
@@ -97,6 +103,10 @@ a:hover {
 }
 
 @media (min-width: 768px) {
+  /* #id-book-img {
+    height: 400px;
+    width: 250px;
+  } */
   .navbar {
     height: 100px;
     background: url(/books.jpg);

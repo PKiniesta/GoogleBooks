@@ -16,10 +16,11 @@ const Search = ({ search, onSearch }) => {
     return 'btn-top';
   };
 
+  const scroll = () => {
+    window.addEventListener('scroll', handleScroll);
+  };
+
   useEffect(() => {
-    const scroll = () => {
-      window.addEventListener('scroll', handleScroll);
-    };
     scroll();
   }, []);
 
