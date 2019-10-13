@@ -79,25 +79,39 @@ const BookInfo = ({ book }) => {
       </div>
       <div className="col-12 col-md-8 pl-0 py-3">
         <h3>{handleTitle(book)}</h3>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>{book.volumeInfo.publisher}</div>
+        <div>{book.volumeInfo.publishedDate}</div>
+        <div>
+          {!book.volumeInfo.description ? (
+            'BRAK DANYCH'
+          ) : (
+            <span
+              dangerouslySetInnerHTML={htmlDescription(
+                book.volumeInfo.description
+              )}
+            ></span>
+          )}
+        </div>
         <div>
           <div className="my-2">Autorzy:</div>
-          <Authors authors={0} />
+          <Authors authors={book.volumeInfo.authors} />
         </div>
         <div className="d-flex flex-row col-12 px-0">
           <StarRatings
-            rating={2}
+            rating={
+              book.volumeInfo.averageRating ? book.volumeInfo.averageRating : 0
+            }
             starRatedColor="gold"
             numberOfStars={5}
             name="rating"
             starDimension={'20px'}
             starSpacing={'0px'}
           />
-          <div></div>
+          <div>
+            ({!book.volumeInfo.ratingsCount ? 0 : book.volumeInfo.ratingsCount})
+          </div>
         </div>
-        <a>
+        <a href={book.volumeInfo.previewLink}>
           <button className="btn btn-secondary">STRONA GOOGLE</button>
         </a>
         <Link href="/">
