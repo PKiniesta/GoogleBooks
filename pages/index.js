@@ -1,13 +1,14 @@
 import fetch from 'isomorphic-unfetch';
 import { useState } from 'react';
 import Main from './components/Main';
-import Layout from './components/Layout';
+import LayoutIndex from './components/Layout/LayoutIndex';
+const baseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
 
 const Index = () => {
   const [books, setBooks] = useState({ data: [], total: 0 });
   const [search, setSearch] = useState();
   const [loading, setLoading] = useState({ isLoading: false });
-  const baseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
+
   const onChangeSearch = event => {
     const { value } = event.target;
     setSearch(value);
@@ -30,13 +31,13 @@ const Index = () => {
   };
 
   return (
-    <Layout search={onChangeSearch} onSearch={onSearchClick}>
+    <LayoutIndex search={onChangeSearch} onSearch={onSearchClick}>
       <Main
         books={books.data}
         noBooks={books.total}
         isLoading={loading.isLoading}
       />
-    </Layout>
+    </LayoutIndex>
   );
 };
 

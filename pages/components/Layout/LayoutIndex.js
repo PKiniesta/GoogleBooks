@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import Search from './Search';
-import Footer from './Footer';
+import Search from '../Search';
+import Footer from '../Footer';
 
-const Layout = props => {
+const LayoutIndex = props => {
   const { children, search, onSearch } = props;
   return (
     <div>
@@ -13,10 +13,10 @@ const Layout = props => {
   );
 };
 
-Layout.propTypes = {
+LayoutIndex.propTypes = {
   children: PropTypes.object.isRequired,
   search: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired
 };
 
-export default Layout;
+export default LayoutIndex;
