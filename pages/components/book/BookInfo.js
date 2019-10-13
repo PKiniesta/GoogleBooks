@@ -26,6 +26,14 @@ Authors.propTypes = {
 const BookInfo = ({ book }) => {
   const [loading, setLoading] = useState(true);
 
+  const handleTitle = book => {
+    console.log(book);
+    try {
+      return book.volumeInfo.title.length;
+    } catch (e) {
+      return 'UKNOWN TITLE';
+    }
+  };
   const handleImage = book => {
     try {
       return book.volumeInfo.imageLinks.large
@@ -69,7 +77,7 @@ const BookInfo = ({ book }) => {
         />
       </div>
       <div className="col-12 col-md-8 pl-0 py-3">
-        <h3>{book.volumeInfo.title}</h3>
+        <h3>{handleTitle(book)}</h3>
         <div>{book.volumeInfo.publisher}</div>
         <div>{book.volumeInfo.publishedDate}</div>
         <div>
