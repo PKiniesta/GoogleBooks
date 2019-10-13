@@ -29,11 +29,12 @@ const BookInfo = ({ book }) => {
   const handleTitle = book => {
     console.log(book);
     try {
-      return book.volumeInfo.title.length;
+      return book.volumeInfo.title;
     } catch (e) {
-      return 'UKNOWN TITLE';
+      return 'BRAK DANYCH';
     }
   };
+
   const handleImage = book => {
     try {
       return book.volumeInfo.imageLinks.large
@@ -78,8 +79,8 @@ const BookInfo = ({ book }) => {
       </div>
       <div className="col-12 col-md-8 pl-0 py-3">
         <h3>{handleTitle(book)}</h3>
-        <div>{book.volumeInfo.publisher}</div>
-        <div>{book.volumeInfo.publishedDate}</div>
+        <div></div>
+        <div></div>
         <div>
           {!book.volumeInfo.description ? (
             'BRAK DANYCH'
@@ -93,7 +94,7 @@ const BookInfo = ({ book }) => {
         </div>
         <div>
           <div className="my-2">Autorzy:</div>
-          <Authors authors={book.volumeInfo.authors} />
+          <Authors authors={0} />
         </div>
         <div className="d-flex flex-row col-12 px-0">
           <StarRatings
