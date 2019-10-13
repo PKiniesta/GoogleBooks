@@ -6,7 +6,7 @@ const baseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
 
 const Index = () => {
   const [books, setBooks] = useState({ data: [], total: 0 });
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
   const [loading, setLoading] = useState({ isLoading: false });
 
   const onChangeSearch = event => {

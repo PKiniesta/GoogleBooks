@@ -118,7 +118,7 @@ const BookInfo = ({ book }) => {
           <button className="btn btn-secondary ml-3">WRÓĆ</button>
         </Link>
       </div>
-      <div className="col-12 px-0">
+      <div className="col-12 px-0 d-flex align-items-end ">
         <Footer />
       </div>
     </div>
