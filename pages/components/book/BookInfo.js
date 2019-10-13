@@ -81,37 +81,23 @@ const BookInfo = ({ book }) => {
         <h3>{handleTitle(book)}</h3>
         <div></div>
         <div></div>
-        <div>
-          {!book.volumeInfo.description ? (
-            'BRAK DANYCH'
-          ) : (
-            <span
-              dangerouslySetInnerHTML={htmlDescription(
-                book.volumeInfo.description
-              )}
-            ></span>
-          )}
-        </div>
+        <div></div>
         <div>
           <div className="my-2">Autorzy:</div>
           <Authors authors={0} />
         </div>
         <div className="d-flex flex-row col-12 px-0">
           <StarRatings
-            rating={
-              book.volumeInfo.averageRating ? book.volumeInfo.averageRating : 0
-            }
+            rating={2}
             starRatedColor="gold"
             numberOfStars={5}
             name="rating"
             starDimension={'20px'}
             starSpacing={'0px'}
           />
-          <div>
-            ({!book.volumeInfo.ratingsCount ? 0 : book.volumeInfo.ratingsCount})
-          </div>
+          <div></div>
         </div>
-        <a href={book.volumeInfo.previewLink}>
+        <a>
           <button className="btn btn-secondary">STRONA GOOGLE</button>
         </a>
         <Link href="/">
