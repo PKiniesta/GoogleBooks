@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import StarRatings from '../../../node_modules/react-star-ratings';
+import StarRatings from '../../node_modules/react-star-ratings';
 
 const Books = props => {
   const { books } = props;

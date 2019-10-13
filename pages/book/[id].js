@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import fetch from 'isomorphic-unfetch';
 
-import BookInfo from '../components/book/BookInfo';
+import BookInfo from '../../components/book/BookInfo';
 
 const Book = props => {
   const { book } = props;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Search from '../Search';
-import Footer from '../Footer';
+import Search from '../components/Search';
+import Footer from '../components/Footer';
 
 const LayoutIndex = props => {
   const { children, search, onSearch } = props;

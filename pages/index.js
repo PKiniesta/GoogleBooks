@@ -1,7 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 import { useState } from 'react';
-import Main from './components/Main';
-import LayoutIndex from './components/Layout/LayoutIndex';
+import Main from '../components/index/Main';
+import LayoutIndex from '../Layout/LayoutIndex';
 const baseUrl = 'https://www.googleapis.com/books/v1/volumes?q=';
 
 const Index = () => {

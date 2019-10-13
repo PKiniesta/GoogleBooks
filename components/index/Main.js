@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Books from './index/Books';
-import NoBooks from './index/NoBooks';
+import Books from './Books';
+import NoBooks from './NoBooks';
 import '../../style/styles.css';
 
 const Main = ({ books, noBooks, isLoading }) => {
