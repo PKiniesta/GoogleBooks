@@ -2,6 +2,7 @@
 
 - **APP**
   - https://nextjs.pk2k.now.sh/
+  - TYPE TO SEARCH
 
 
 
